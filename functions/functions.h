@@ -1,7 +1,7 @@
 
-#include "implement.h"
-#include "draw.h"
+#include "implementation/implement.h"
+#include "draw/draw.h"
 
-#include "draw.c"
-#include "implement.c"
+#include "draw/draw.c"
+#include "implementation/implement.c"
 

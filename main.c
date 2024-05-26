@@ -1,4 +1,6 @@
-#include "raylib.h"
+#include "dependencies/raylib.h"
+#include "dependencies/raymath.h"
+#include "dependencies/rlgl.h"
 
 #define screenWidth 800
 #define screenHeight 450
@@ -25,7 +27,7 @@ int main(){
         ImplementGamePlay();
         BeginDrawing();
          ClearBackground(RAYWHITE);
-            DrawScreens();
+            DrawScreens(texLogo);
         EndDrawing();
     }
 

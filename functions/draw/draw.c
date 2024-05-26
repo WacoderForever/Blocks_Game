@@ -1,5 +1,5 @@
 
-    void DrawScreens(){
+    void DrawScreens(Texture  texLogo){
 
         switch(screen){
 
