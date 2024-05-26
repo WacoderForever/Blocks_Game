@@ -1,5 +1,4 @@
 
-
     void DrawScreens(){
 
         switch(screen){
@@ -7,8 +6,9 @@
             case(LOGO): {
 
                 DrawRectangle(0,0,800,450,RAYWHITE);
-                DrawText("LOGO",20,20,40,LIGHTGRAY);
-                DrawText("Loading........",300,200,60,LIGHTGRAY);
+                DrawTexture(texLogo,(screenWidth/2 -texLogo.width/2),(screenHeight/2 - texLogo.height/2),WHITE);
+               // DrawText("LOGO",20,20,40,LIGHTGRAY);
+               // DrawText("Loading........",300,200,60,LIGHTGRAY);
 
             }break;
 

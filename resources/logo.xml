@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200">
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#e6e6e6"/>
+  
+  <!-- Characters -->
+  <!-- Character 1 -->
+  <circle cx="100" cy="100" r="40" fill="#ff6666"/>
+  <!-- Character 2 -->
+  <circle cx="300" cy="100" r="40" fill="#6666ff"/>
+  
+  <!-- Weapons -->
+  <!-- Weapon for Character 1 -->
+  <line x1="130" y1="100" x2="150" y2="80" stroke="#000" stroke-width="3"/>
+  <!-- Weapon for Character 2 -->
+  <line x1="270" y1="100" x2="250" y2="80" stroke="#000" stroke-width="3"/>
+  
+  <!-- Action -->
+  <!-- Attack from Character 1 to Character 2 -->
+  <line x1="150" y1="80" x2="250" y2="80" stroke="#ff0000" stroke-width="3"/>
+</svg>
