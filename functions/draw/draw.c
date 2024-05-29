@@ -1,41 +1,45 @@
 
-    void DrawScreens(Texture  texLogo){
 
-        switch(screen){
+void DrawScreens(){
 
-            case(LOGO): {
+    switch(screen){
 
-                DrawRectangle(0,0,800,450,RAYWHITE);
-                DrawTexture(texLogo,(screenWidth/2 -texLogo.width/2),(screenHeight/2 - texLogo.height/2),WHITE);
-               // DrawText("LOGO",20,20,40,LIGHTGRAY);
-               // DrawText("Loading........",300,200,60,LIGHTGRAY);
+        case(LOGO): {
 
-            }break;
+            Texture2D texLogo=LoadTexture("resources/baki.png");
+            DrawRectangle(0,0,screenWidth,screenHeight,BLACK);
+            DrawTexture(texLogo,(screenWidth/2 -texLogo.width/2),(screenHeight/2 - texLogo.height/2),GRAY);
+            // DrawText("LOGO",20,20,40,LIGHTGRAY);
+            // DrawText("Loading........",300,200,60,LIGHTGRAY);
 
-            case(TITLE): {
+        }break;
 
-                DrawRectangle(0,0,800,450,RAYWHITE);
-                DrawText("TITLE",20,20,40,GRAY);
-                DrawText("Press ENTER to start game",300,200,20,GRAY);
+        case(TITLE): {
 
-            }break;
+            Font font=LoadFont("resources/mickey-mouse.png");
+            DrawRectangle(0,0,800,450,BLACK);
+            DrawTextEx(font,"BLOCKS GAME",(Vector2){100,100},80,8,BROWN);
+            DrawText("Press ENTER to start game!!!",180,250,30,BROWN);
 
-            case(GAMEPLAY): {
+        }break;
 
-                DrawRectangle(0,0,800,450,RAYWHITE);
-                DrawText("GAMEPLAY",20,20,40,LIGHTGRAY);
-                DrawText("Press ENTER to end game.",300,200,20,LIGHTGRAY);
-            }break;
+        case(GAMEPLAY): {
 
-            case(ENDING): {
+            DrawRectangle(0,0,800,450,RAYWHITE);
+            DrawText("GAMEPLAY",20,20,40,LIGHTGRAY);
+            DrawText("Press ENTER to end game.",300,200,20,LIGHTGRAY);
 
-                DrawRectangle(0,0,800,450,RAYWHITE);
-                DrawText("ENDING",20,20,40,LIGHTGRAY);
-                DrawText("Press ENTER to start over.",300,200,20,LIGHTGRAY);
+        }break;
 
-            }break;
+        case(ENDING): {
 
-            default: break;
+            DrawRectangle(0,0,800,450,RAYWHITE);
+            DrawText("ENDING",20,20,40,LIGHTGRAY);
+            DrawText("Press ENTER to start over.",300,200,20,LIGHTGRAY);
+
+        }break;
+
+        default: break;
 
         }
     }

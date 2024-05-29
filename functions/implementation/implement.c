@@ -5,9 +5,14 @@ void ImplementGamePlay(){
 
         case(LOGO): {
 
-            framescount += 1;
+            if(framescount>300){
 
-            if(framescount>180) screen=TITLE;
+                screen=TITLE;
+                framescount += 1;
+            }
+            
+            framescount++;
+
         }break;
 
         case(TITLE): {
@@ -16,6 +21,7 @@ void ImplementGamePlay(){
             if(IsKeyPressed(KEY_ENTER)){
 
                 screen=GAMEPLAY;
+                framescount++;
             }
         }break;
 
@@ -24,6 +30,7 @@ void ImplementGamePlay(){
             if(IsKeyPressed(KEY_ENTER)){
 
                 screen=ENDING;
+                framescount +=1;
             }
         }break;
 

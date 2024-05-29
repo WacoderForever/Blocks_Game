@@ -19,15 +19,13 @@ int main(){
 
     InitWindow(screenWidth,screenHeight,"BLOCKS GAME");
 
-    Texture texLogo=LoadTexture("resources/logo.xml");
-
     SetTargetFPS(60);
     while(!WindowShouldClose()){
 
         ImplementGamePlay();
         BeginDrawing();
          ClearBackground(RAYWHITE);
-            DrawScreens(texLogo);
+            DrawScreens();
         EndDrawing();
     }
 
