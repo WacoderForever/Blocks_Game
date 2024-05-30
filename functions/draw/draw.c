@@ -2,21 +2,25 @@
 
 void DrawScreens(){
 
+    Texture2D texLogo=LoadTexture("resources/baki.png");
+    Font font=LoadFont("resources/dimitri-inverse.ttf");
+
     switch(screen){
 
         case(LOGO): {
 
-            Texture2D texLogo=LoadTexture("resources/baki.png");
             DrawRectangle(0,0,screenWidth,screenHeight,BLACK);
             DrawTexture(texLogo,(screenWidth/2 -texLogo.width/2),(screenHeight/2 - texLogo.height/2),GRAY);
-            // DrawText("LOGO",20,20,40,LIGHTGRAY);
-            // DrawText("Loading........",300,200,60,LIGHTGRAY);
+
+            if((framescount/30)%2 == 0){
+
+                DrawTextEx(font,"Loading..........",(Vector2){300,400},65,5,WHITE);
+            }
 
         }break;
 
         case(TITLE): {
 
-            Font font=LoadFont("resources/dimitri-inverse.ttf");
             DrawRectangle(0,0,800,450,BLACK);
             DrawTextEx(font,"BLOCKS GAME",(Vector2){110,100},100,8,BROWN);
             DrawText("Press ENTER to start game!!!",150,250,30,BROWN);
