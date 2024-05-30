@@ -23,7 +23,11 @@ void DrawScreens(){
 
             DrawRectangle(0,0,800,450,BLACK);
             DrawTextEx(font,"BLOCKS GAME",(Vector2){110,100},100,8,BROWN);
-            DrawText("Press ENTER to start game!!!",150,250,30,BROWN);
+
+            if((framescount/30)%2 == 0){
+                
+                DrawTextEx(font,"Press ENTER to start game!!!",(Vector2){100,250},50,5,BROWN);
+            }
 
         }break;
 

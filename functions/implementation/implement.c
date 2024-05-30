@@ -5,7 +5,7 @@ void ImplementGamePlay(){
 
         case(LOGO): {
 
-            if(framescount>300){
+            if(framescount>180){
 
                 screen=TITLE;
                 framescount += 1;
