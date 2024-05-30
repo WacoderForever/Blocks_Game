@@ -16,10 +16,10 @@ void DrawScreens(){
 
         case(TITLE): {
 
-            Font font=LoadFont("resources/mickey-mouse.png");
+            Font font=LoadFont("resources/dimitri-inverse.ttf");
             DrawRectangle(0,0,800,450,BLACK);
-            DrawTextEx(font,"BLOCKS GAME",(Vector2){100,100},80,8,BROWN);
-            DrawText("Press ENTER to start game!!!",180,250,30,BROWN);
+            DrawTextEx(font,"BLOCKS GAME",(Vector2){110,100},100,8,BROWN);
+            DrawText("Press ENTER to start game!!!",150,250,30,BROWN);
 
         }break;
 
