@@ -32,6 +32,14 @@ void DrawBall(Ball *ball){
 
 }
 
+void DrawLives(Player *player){
+
+    for(int i=0; i < player->lives; i++){
+
+        DrawRectangle(i*40+30,screenHeight*7/8 + 40,30,20,LIGHTGRAY);
+    }
+}
+
 void DrawScreens(){
 
     Texture2D texLogo=LoadTexture("resources/baki.png");
@@ -69,6 +77,7 @@ void DrawScreens(){
             DrawBricks(bricks);
             DrawPlayer(player);
             DrawBall(ball);
+            DrawLives(player);
 
         }break;
 
