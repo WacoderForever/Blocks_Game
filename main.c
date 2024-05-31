@@ -16,21 +16,27 @@ typedef enum{LOGO,TITLE,GAMEPLAY,ENDING}GameScreen;
 
 GameScreen screen=LOGO;
 int framescount=0;
+bool gamepause=false;
 
 #include "functions/functions.h"
 
 Brick ***bricks=NULL;
+Player *player=NULL;
+Ball *ball=NULL;
  
 int main(){
 
     InitWindow(screenWidth,screenHeight,"BLOCKS GAME");
+    
+    bricks = InitBricks();
+    player = InitPlayer();
+    ball = InitBall(player);
 
-    SetTargetFPS(60);
+    SetTargetFPS(120);
     while(!WindowShouldClose()){
 
-        bricks = InitBricks();
+       ImplementGamePlay();
 
-        ImplementGamePlay();
         BeginDrawing();
          ClearBackground(RAYWHITE);
             DrawScreens();

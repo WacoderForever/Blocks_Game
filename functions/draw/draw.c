@@ -1,18 +1,35 @@
 
 extern Brick ***bricks;
+extern Player *player;
+extern Ball *ball;
 
 void DrawBricks(Brick ***bricks){
 
-    Texture2D brick=LoadTexture("resources/brick.png");
+    Texture2D texBrick=LoadTexture("resources/brick.png");
 
     for(int i=0 ; i < BRICK_ROWS ;i++){
 
         for(int j=0 ; j< BRICKS_PER_ROW ; j++){
 
-            if((j+i)%2==0) DrawTextureEx(brick,*(bricks[i][j]->position),0.0f,1.0f,GRAY);
-            else DrawTextureEx(brick,*(bricks[i][j]->position),0.0f,1.0f,LIGHTGRAY);
+            if((j+i)%2==0) DrawTextureEx(texBrick,*(bricks[i][j]->position),0.0f,1.0f,GRAY);
+            else DrawTextureEx(texBrick,*(bricks[i][j]->position),0.0f,1.0f,LIGHTGRAY);
         }
     }
+}
+
+void DrawPlayer(Player *player){
+
+    Texture2D texPlayer=LoadTexture("resources/paddle.png");
+    DrawTextureEx(texPlayer,*(player->position),0.0f,1.0f,WHITE);
+
+} 
+
+void DrawBall(Ball *ball){
+
+    Texture2D texBall=LoadTexture("resources/ball.png");
+
+    DrawTextureEx(texBall,*(ball->position),0.0f,1.0f,WHITE);
+
 }
 
 void DrawScreens(){
@@ -48,8 +65,10 @@ void DrawScreens(){
 
         case(GAMEPLAY): {
 
-            DrawRectangle(0,0,screenWidth,screenHeight,RAYWHITE);
+            DrawRectangle(0,0,screenWidth,screenHeight,BLACK);
             DrawBricks(bricks);
+            DrawPlayer(player);
+            DrawBall(ball);
 
         }break;
 

@@ -1,4 +1,8 @@
 
+extern Brick ***bricks;
+extern Player *player;
+extern Ball *ball;
+
 void ImplementGamePlay(){
 
     switch(screen){
@@ -27,11 +31,18 @@ void ImplementGamePlay(){
 
         case(GAMEPLAY): {
 
-            if(IsKeyPressed(KEY_ENTER)){
+            if(IsKeyDown(KEY_RIGHT)) player->position->x += player->speed->x;
+            if(IsKeyDown(KEY_LEFT)) player->position->x -= player->speed->x;
 
-                screen=ENDING;
-                framescount +=1;
-            }
+            if((player->position->x + player->size->x) > screenWidth) player->position->x = screenWidth - player->size->x;
+            if(player->position->x < 0) player->position->x = 0;
+
+            player->bound->x=player->position->x;
+            player->bound->y=player->position->y;
+            player->bound->width=player->size->x;
+            player->bound->height=player->size->y;
+
+
         }break;
 
         case(ENDING): {
@@ -40,6 +51,8 @@ void ImplementGamePlay(){
 
                 screen=LOGO;
             }
+
+            framescount=181;
 
         }break;
 
