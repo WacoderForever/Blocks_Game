@@ -1,9 +1,24 @@
 
+extern Brick ***bricks;
+
+void DrawBricks(Brick ***bricks){
+
+    Texture2D brick=LoadTexture("resources/brick.png");
+
+    for(int i=0 ; i < BRICK_ROWS ;i++){
+
+        for(int j=0 ; j< BRICKS_PER_ROW ; j++){
+
+            if((j+i)%2==0) DrawTextureEx(brick,*(bricks[i][j]->position),0.0f,1.0f,GRAY);
+            else DrawTextureEx(brick,*(bricks[i][j]->position),0.0f,1.0f,LIGHTGRAY);
+        }
+    }
+}
 
 void DrawScreens(){
 
     Texture2D texLogo=LoadTexture("resources/baki.png");
-    Font font=LoadFont("resources/dimitri-inverse.ttf");
+    Font font=LoadFont("resources/campus-personal-use.regular.ttf");
 
     switch(screen){
 
@@ -14,28 +29,27 @@ void DrawScreens(){
 
             if((framescount/30)%2 == 0){
 
-                DrawTextEx(font,"Loading..........",(Vector2){300,400},65,5,WHITE);
+                DrawTextEx(font,"Loading..........",(Vector2){300,400},60,5,WHITE);
             }
 
         }break;
 
         case(TITLE): {
 
-            DrawRectangle(0,0,800,450,BLACK);
-            DrawTextEx(font,"BLOCKS GAME",(Vector2){110,100},100,8,BROWN);
+            DrawRectangle(0,0,screenWidth,screenHeight,BLACK);
+            DrawTextEx(font,"BLOCKS GAME",(Vector2){110,100},80,7,BROWN);
 
             if((framescount/30)%2 == 0){
-                
-                DrawTextEx(font,"Press ENTER to start game!!!",(Vector2){100,250},50,5,BROWN);
+
+                DrawTextEx(font,"Press ENTER to start game!!!",(Vector2){100,250},40,4,BROWN);
             }
 
         }break;
 
         case(GAMEPLAY): {
 
-            DrawRectangle(0,0,800,450,RAYWHITE);
-            DrawText("GAMEPLAY",20,20,40,LIGHTGRAY);
-            DrawText("Press ENTER to end game.",300,200,20,LIGHTGRAY);
+            DrawRectangle(0,0,screenWidth,screenHeight,RAYWHITE);
+            DrawBricks(bricks);
 
         }break;
 

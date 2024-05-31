@@ -1,7 +1,8 @@
-
+#include "objects/objects.h"
 #include "implementation/implement.h"
 #include "draw/draw.h"
 
-#include "draw/draw.c"
+#include "objects/objects.c"
 #include "implementation/implement.c"
+#include "draw/draw.c"
 
