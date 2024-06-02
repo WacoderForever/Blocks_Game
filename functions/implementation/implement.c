@@ -31,16 +31,26 @@ void ImplementGamePlay(){
 
         case(GAMEPLAY): {
 
-            if(IsKeyDown(KEY_RIGHT)) player->position->x += player->speed->x;
-            if(IsKeyDown(KEY_LEFT)) player->position->x -= player->speed->x;
+            if(IsKeyPressed(KEY_P)) gamepaused = !gamepaused;
 
-            if((player->position->x + player->size->x) > screenWidth) player->position->x = screenWidth - player->size->x;
-            if(player->position->x < 0) player->position->x = 0;
+            if(!gamepaused){
 
-            player->bound->x=player->position->x;
-            player->bound->y=player->position->y;
-            player->bound->width=player->size->x;
-            player->bound->height=player->size->y;
+                if(IsKeyDown(KEY_RIGHT)) player->position->x += player->speed->x;
+                if(IsKeyDown(KEY_LEFT)) player->position->x -= player->speed->x;
+
+                if((player->position->x + player->size->x) > screenWidth) player->position->x = screenWidth - player->size->x;
+                if(player->position->x < 0) player->position->x = 0;
+
+                player->bound->x=player->position->x;
+                player->bound->y=player->position->y;
+                player->bound->width=player->size->x;
+                player->bound->height=player->size->y;
+            }
+
+            if(player->lives == 0 || IsKeyPressed(KEY_ENTER)){
+
+                screen=ENDING;
+            }
 
 
         }break;
@@ -49,10 +59,10 @@ void ImplementGamePlay(){
 
             if(IsKeyPressed(KEY_ENTER)){
 
-                screen=LOGO;
+                screen=GAMEPLAY;
             }
 
-            framescount=181;
+            framescount++;
 
         }break;
 

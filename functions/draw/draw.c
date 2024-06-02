@@ -83,9 +83,13 @@ void DrawScreens(){
 
         case(ENDING): {
 
-            DrawRectangle(0,0,800,450,RAYWHITE);
-            DrawText("ENDING",20,20,40,LIGHTGRAY);
-            DrawText("Press ENTER to start over.",300,200,20,LIGHTGRAY);
+            DrawRectangle(0,0,800,450,BLACK);
+            DrawTextEx(font,"Do you want to try again?",(Vector2){100,150},40,4,BROWN);
+
+            if((framescount/30)%2 == 0){
+                
+                DrawTextEx(font,"Press ENTER to start over.",(Vector2){130,300},30,3,BROWN);  
+            }  
 
         }break;
 

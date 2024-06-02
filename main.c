@@ -16,7 +16,7 @@ typedef enum{LOGO,TITLE,GAMEPLAY,ENDING}GameScreen;
 
 GameScreen screen=LOGO;
 int framescount=0;
-bool gamepause=false;
+bool gamepaused=false;
 
 #include "functions/functions.h"
 
