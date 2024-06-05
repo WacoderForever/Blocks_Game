@@ -45,6 +45,22 @@ void ImplementGamePlay(){
                 player->bound->y=player->position->y;
                 player->bound->width=player->size->x;
                 player->bound->height=player->size->y;
+
+
+                if(IsKeyPressed(KEY_SPACE)){
+
+                    ball->active=true;
+                }
+
+                if(ball->active){
+
+                    ball->position->x += ball->speed->x;
+                    ball->position->y += ball->speed->y;
+
+                    if((ball->position->y <= 0) || (ball->position->y >= screenHeight)) ball->speed->y *= -1;
+                }
+                
+
             }
 
             if(player->lives == 0 || IsKeyPressed(KEY_ENTER)){

@@ -72,8 +72,8 @@ Ball *InitBall(Player *player){
     ball->position->y = player->position->y - ball->radius*3;
 
     ball->speed=(Vector2*)malloc(sizeof(Vector2));
-    ball->speed->x=4.0f;
-    ball->speed->y=4.0f;
+    ball->speed->x=0.0f;
+    ball->speed->y=-10.0f;
 
     ball->active=false;
 
