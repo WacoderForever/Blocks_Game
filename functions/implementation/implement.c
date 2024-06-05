@@ -58,6 +58,13 @@ void ImplementGamePlay(){
                     ball->position->y += ball->speed->y;
 
                     if((ball->position->y <= 0) || (ball->position->y >= screenHeight)) ball->speed->y *= -1;
+                    if((ball->position->x <= 0) || (ball->position->x >= screenWidth)) ball->speed->x *= -1;
+
+                    if(CheckCollisionCircleRec(*(ball->position),ball->radius,*(player->bound))){
+
+                        ball->speed->y *= -1;
+                        ball->speed->x  = (ball->position->x - (player->position->x + player->size->x/2)) / player->size->x * 10.0f;
+                    }
                 }
                 
 

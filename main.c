@@ -32,7 +32,7 @@ int main(){
     player = InitPlayer();
     ball = InitBall(player);
 
-    SetTargetFPS(120);
+    SetTargetFPS(60);
     while(!WindowShouldClose()){
 
        ImplementGamePlay();
