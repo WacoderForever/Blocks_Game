@@ -81,12 +81,19 @@ void ImplementGamePlay(){
                             }
                         }
                     }
-                }
-                
 
+                    if(ball->position->y > player->position->y){
+
+                        player->lives--;
+                        ball->position->x=player->position->x + player->size->x/2 - 10;
+                        ball->position->y = player->position->y - ball->radius*3;
+                        ball->active= !ball->active;
+
+                    }
+                }
             }
 
-            if(player->lives == 0 || IsKeyPressed(KEY_ENTER)){
+            if(player->lives == 0){
 
                 screen=ENDING;
             }
@@ -95,6 +102,16 @@ void ImplementGamePlay(){
         }break;
 
         case(ENDING): {
+
+            for(int i=0;i<BRICK_ROWS;i++){
+
+                for(int j=0; j<BRICKS_PER_ROW; j++){
+
+                    bricks[i][j]->active=true;
+                }
+            }
+
+            player->lives=PLAYER_LIVES;
 
             if(IsKeyPressed(KEY_ENTER)){
 
