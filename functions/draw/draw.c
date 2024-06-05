@@ -10,9 +10,12 @@ void DrawBricks(Brick ***bricks){
     for(int i=0 ; i < BRICK_ROWS ;i++){
 
         for(int j=0 ; j< BRICKS_PER_ROW ; j++){
-
-            if((j+i)%2==0) DrawTextureEx(texBrick,*(bricks[i][j]->position),0.0f,1.0f,GRAY);
-            else DrawTextureEx(texBrick,*(bricks[i][j]->position),0.0f,1.0f,LIGHTGRAY);
+            
+            if(bricks[i][j]->active){
+                
+                if((j+i)%2==0) DrawTextureEx(texBrick,*(bricks[i][j]->position),0.0f,1.0f,GRAY);
+                else DrawTextureEx(texBrick,*(bricks[i][j]->position),0.0f,1.0f,LIGHTGRAY);
+            }
         }
     }
 }

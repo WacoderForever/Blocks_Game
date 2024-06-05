@@ -65,6 +65,22 @@ void ImplementGamePlay(){
                         ball->speed->y *= -1;
                         ball->speed->x  = ((ball->position->x + 10) - (player->position->x + player->size->x/2)) / player->size->x * 10.0f;
                     }
+
+                    for(int i=0;i<BRICK_ROWS;i++){
+
+                        for(int j=0; j<BRICKS_PER_ROW; j++){
+
+                            if(bricks[i][j]->active){
+
+                                if(CheckCollisionCircleRec(*(ball->position),ball->radius,*(bricks[i][j]->bound))){
+                                    
+                                    bricks[i][j]->active = !bricks[i][j]->active;
+                                    ball->speed->y *= -1;
+
+                                }
+                            }
+                        }
+                    }
                 }
                 
 
