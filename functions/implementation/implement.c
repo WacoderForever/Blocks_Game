@@ -49,7 +49,7 @@ void ImplementGamePlay(){
 
                 if(IsKeyPressed(KEY_SPACE)){
 
-                    ball->active=true;
+                    ball->active= !ball->active;
                 }
 
                 if(ball->active){
@@ -63,7 +63,7 @@ void ImplementGamePlay(){
                     if(CheckCollisionCircleRec(*(ball->position),ball->radius,*(player->bound))){
 
                         ball->speed->y *= -1;
-                        ball->speed->x  = (ball->position->x - (player->position->x + player->size->x/2)) / player->size->x * 10.0f;
+                        ball->speed->x  = ((ball->position->x + 10) - (player->position->x + player->size->x/2)) / player->size->x * 10.0f;
                     }
                 }
                 
