@@ -57,6 +57,7 @@ Player *InitPlayer(){
     player->bound->height=player->size->y;
 
     player->lives=PLAYER_LIVES;
+    player->score=PLAYER_SCORE;
 
     return player;
 }

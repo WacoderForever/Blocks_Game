@@ -15,6 +15,7 @@ typedef struct{
     Vector2 *speed;
     Rectangle  *bound;
     int lives;
+    int score;
 
 
 }Player;

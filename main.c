@@ -11,6 +11,7 @@
 #define BRICKS_PER_ROW 20
 #define BRICK_ROWS 5
 #define BRICK_Y_POS 50
+#define PLAYER_SCORE 0
 
 typedef enum{LOGO,TITLE,GAMEPLAY,ENDING}GameScreen;
 

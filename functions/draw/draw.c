@@ -88,10 +88,13 @@ void DrawScreens(){
 
             DrawRectangle(0,0,800,450,BLACK);
             DrawTextEx(font,"Do you want to try again?",(Vector2){100,150},40,4,BROWN);
-
+            DrawTextEx(font,"Score: ",(Vector2){150,250},40,4,BROWN);
+            char *str = (char*) malloc(3);
+            sprintf(str,"%d",player->score);
+            DrawText(str,310,240,40,BROWN);
             if((framescount/30)%2 == 0){
                 
-                DrawTextEx(font,"Press ENTER to start over.",(Vector2){130,300},30,3,BROWN);  
+                DrawTextEx(font,"Press ENTER to start over.",(Vector2){130,400},30,3,BROWN);  
             }  
 
         }break;

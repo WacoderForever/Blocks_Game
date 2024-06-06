@@ -49,7 +49,7 @@ void ImplementGamePlay(){
 
                 if(IsKeyPressed(KEY_SPACE)){
 
-                    ball->active= !ball->active;
+                    ball->active = !ball->active;
                 }
 
                 if(ball->active){
@@ -76,6 +76,7 @@ void ImplementGamePlay(){
                                     
                                     bricks[i][j]->active = !bricks[i][j]->active;
                                     ball->speed->y *= -1;
+                                    player->score++;
 
                                 }
                             }
@@ -87,13 +88,15 @@ void ImplementGamePlay(){
                         player->lives--;
                         ball->position->x=player->position->x + player->size->x/2 - 10;
                         ball->position->y = player->position->y - ball->radius*3;
+                        ball->speed->x = 0.0f;
+                        ball->speed->y = -10.0f;
                         ball->active= !ball->active;
 
                     }
                 }
             }
 
-            if(player->lives == 0){
+            if(player->lives == 0 || player->score == 100){
 
                 screen=ENDING;
             }
@@ -114,6 +117,9 @@ void ImplementGamePlay(){
             player->lives=PLAYER_LIVES;
 
             if(IsKeyPressed(KEY_ENTER)){
+
+                 player->position->x=screenWidth/2 - 50;
+                 player->position->y=screenHeight*7/8;
 
                 screen=GAMEPLAY;
             }
